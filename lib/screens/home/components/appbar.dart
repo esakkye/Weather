@@ -15,6 +15,16 @@ class AppBarLocation extends StatefulWidget implements PreferredSizeWidget {
 class _AppBarLocationState extends State<AppBarLocation> {
   @override
   Widget build(BuildContext context) {
-    return const AppbarWidget();
+    // return const AppbarWidget();
+    return Column(
+      children: [
+        for (var item in locations)
+          AppbarWidget(
+            itemIndex: item.id,
+            location: item.locationName,
+            locationTime: item.locationTime,
+          )
+      ],
+    );
   }
 }

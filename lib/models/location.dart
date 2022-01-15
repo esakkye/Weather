@@ -1,8 +1,9 @@
 class Location {
+  final int id;
   final String locationName;
   final String locationTime;
 
-  Location(this.locationName, this.locationTime);
+  Location(this.id, this.locationName, this.locationTime);
 }
 
-List<Location> locations = [Location('Tirunelveli', '2PM')];
+List<Location> locations = [Location(1, 'Tirunelveli', '2p')];

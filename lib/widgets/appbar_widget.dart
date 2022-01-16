@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:weather/constant.dart';
 
 class AppbarWidget extends StatefulWidget {
   final int itemIndex;
@@ -22,6 +23,9 @@ class _AppbarWidgetState extends State<AppbarWidget> {
     return AppBar(
       title: AppContext(
           location: widget.location, locationTime: widget.locationTime),
+      toolbarHeight: 80,
+      backgroundColor: Colors.transparent,
+      elevation: 0,
     );
   }
 }
@@ -36,7 +40,18 @@ class AppContext extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Text(location), Text(locationTime)],
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          location.toUpperCase(),
+          style: const TextStyle(color: appFontColor, fontSize: appFontSize),
+        ),
+        Text(
+          locationTime.toUpperCase(),
+          style: const TextStyle(
+              color: appFontColor, fontSize: appFontSize * 0.75),
+        )
+      ],
     );
   }
 }
